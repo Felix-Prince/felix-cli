@@ -1,22 +1,25 @@
 {
-  "name": "felix-cli",
-  "version": "1.0.0",
-  "description": "前端脚手架",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/Felix-Prince/felix-cli.git"
-  },
-  "keywords": [
-    "cli"
-  ],
-  "author": "Felix",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Felix-Prince/felix-cli/issues"
-  },
-  "homepage": "https://github.com/Felix-Prince/felix-cli#readme"
+    "name": "felix-cli",
+    "version": "1.0.0",
+    "description": "前端脚手架",
+    "main": "index.js",
+    "bin": {
+        "felix-cli": "index.js"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/Felix-Prince/felix-cli.git"
+    },
+    "keywords": [
+        "cli"
+    ],
+    "author": "Felix",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Felix-Prince/felix-cli/issues"
+    },
+    "homepage": "https://github.com/Felix-Prince/felix-cli#readme"
 }
