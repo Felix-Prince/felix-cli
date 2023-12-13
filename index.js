@@ -1,18 +1,26 @@
 #!/usr/bin/env node
 
-console.log("--running felix-cli start--");
+const { program } = require("commander")
+const fs = require("fs")
 
-const { program } = require("commander");
-const download = require("download-git-repo");
-program.version("1.0.0");
+program
+    .command("create <filename>")
+    .description("Create a new file")
+    .action((filename) => {
+        fs.writeFileSync(filename, "")
+        console.log(`File '${filename}' created successfully.`)
+    })
 
-program.parse(process.argv);
+program
+    .command("delete <filename>")
+    .description("Delete a file")
+    .action((filename) => {
+        try {
+            fs.unlinkSync(filename)
+            console.log(`File '${filename}' deleted successfully.`)
+        } catch (error) {
+            console.error(`Error deleting file: ${error.message}`)
+        }
+    })
 
-download(
-    "direct:https://github.com/Felix-Prince/leetcode.git",
-    "../template",
-    { clone: true },
-    (err) => {
-        console.log("--------", err);
-    }
-);
+program.parse(process.argv)
